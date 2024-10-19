@@ -70,18 +70,15 @@ The memory allocated for the neural network is freed by calling the FreeN(N) fun
 ## Building
 
 Enter the command:
-***
+```shell
 make
-***
+```
 
 After the build, the libneuronfw library and the example program will appear in the root directory of the project, in which the neural network is trained to calculate XOR, AND and OR. The program can be started by entering the command:
-
-***
+```shell
 ./example
-***
-
+```
 or:
-
-***
+```shell
 make run
-***
+```
