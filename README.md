@@ -64,6 +64,9 @@ In order for the neural network to recalculate new incoming data, it is necessar
 ### Displaying the recalculation result on the screen
 The PrintOutputs(N) function displays only the output values on the screen. You can also access the outputs by simply accessing them using the C syntax for structures (N->output.neurons[index].value).
 
+### Deleting a neural network
+The memory allocated for the neural network is freed by calling the FreeN(N) function
+
 ## Building
 
 Enter the command:
