@@ -1,2 +1,4 @@
-example*
-libneuronfe*
+example
+example.exe
+libneuronfw.dll
+libneuronfw.so
