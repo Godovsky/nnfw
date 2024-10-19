@@ -26,11 +26,11 @@ The data is described in a one-dimensional array in such a way that all inputs a
 
 ```C
 /*  ____|XOR|AND| OR|
-        0 0 | 0 | 0 | 0 |
-        0 1 | 1 | 0 | 1 |
-        1 0 | 1 | 0 | 1 |
-        1 1 | 0 | 1 | 1 |
-        Two inputs and three outputs */
+    0 0 | 0 | 0 | 0 |
+    0 1 | 1 | 0 | 1 |
+    1 0 | 1 | 0 | 1 |
+    1 1 | 0 | 1 | 1 |
+    Two inputs and three outputs */
     float d[] = {
         0,0, 0,0,0, /* First section (2 inputs and 3 outputs) */
         0,1, 1,0,1, /* Second section */
