@@ -29,15 +29,15 @@ int main (int argc, char * argv[])
         1 0 | 1 | 0 | 1 |
         1 1 | 0 | 1 | 1 |
         Two inputs and three outputs */
-    float d[] = {
+    FLOAT_DATA d[] = {
         0,0, 0,0,0,
         0,1, 1,0,1,
         1,0, 1,0,1,
         1,1, 0,1,1
     };
 
-    int columns = config[0]+config[GET_ARRAY_SIZE(config)-1];
-    int rows = GET_ARRAY_SIZE(d)/columns;
+    COL columns = config[0]+config[GET_ARRAY_SIZE(config)-1];
+    ROW rows = GET_ARRAY_SIZE(d)/columns;
     DATA_TRAIN Data = {rows, columns, d};
 
     for (int i = 1; i <= NUM_OF_ITER; i++)

@@ -1,6 +1,10 @@
 #ifndef N_TYPES_H
 #define N_TYPES_H
 
+typedef float           OFFSET;
+typedef float           STEP;
+typedef float           DIFFERENCE;
+
 typedef int             N_CONFIG;
 typedef int             N_CONFIG_SIZE;
 
@@ -24,7 +28,7 @@ typedef struct
     ARRAY_OF_WEIHGTS    weights;
 } N_NEURON;
 
-typedef N_NEURON * ARRAY_OF_NEURONS;
+typedef N_NEURON *      ARRAY_OF_NEURONS;
 
 typedef struct
 {
@@ -33,7 +37,7 @@ typedef struct
     BIAS_TYPE           bias;
 } N_LAYER, OUTPUT_LAYER;
 
-typedef N_LAYER * ARRAY_OF_LAYERS;
+typedef N_LAYER *       ARRAY_OF_LAYERS;
 
 typedef struct
 {
@@ -44,15 +48,14 @@ typedef struct
     OUTPUT_LAYER        output;
 } N_NETWORK;
 
-typedef float   OFFSET;
-typedef float   STEP;
-typedef float   DIFFERENCE;
+typedef int             ROW, COL;
+typedef float           FLOAT_DATA;
 
 typedef struct
 {
-    int row;
-    int col;
-    float * data;
+    ROW                 row;
+    COL                 col;
+    FLOAT_DATA *        data;
 } DATA_TRAIN;
 
 #endif

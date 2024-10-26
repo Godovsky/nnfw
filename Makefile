@@ -1,13 +1,14 @@
-.PHONY: all run nslib
+.PHONY: all run nslib clean
 
 CC = gcc
-CFLAGS = -Wall -std=c99
+CFLAGS = -Wall -std=c99 -pedantic
 INCLUDE = -Iinclude
 PROJECTNAME = neuronfw
 
 ifeq ($(OS),Windows_NT)
 	EXAMPLE = example.exe
     NSLIB = lib$(PROJECTNAME).dll
+    RM = del
     ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
         
     else
@@ -23,6 +24,7 @@ else
     ifeq ($(UNAME_S),Linux)
         EXAMPLE = example
         NSLIB = lib$(PROJECTNAME).so
+        RM = rm -fv
     endif
     ifeq ($(UNAME_S),Darwin)
         
@@ -47,7 +49,7 @@ LIBRARIES += -lm -l$(PROJECTNAME)
 
 all: nslib $(EXAMPLE)
 
-$(EXAMPLE): example.c
+$(EXAMPLE): $(SRC)/example.c
 	@echo "Building $(@F)"
 	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -L./ -Wl,-R./ $(LIBRARIES)
 
@@ -57,5 +59,9 @@ $(NSLIB): $(CFILES)
 	@echo "Building $(@F)"
 	@$(CC) $(CFLAGS) $(INCLUDE) -shared $(CFILES) -o $@ -lm
 
-run: $(EXAMPLE)
+run: all
 	@./$(EXAMPLE)
+
+clean:
+	@$(RM) $(EXAMPLE)
+	@$(RM) $(NSLIB)

@@ -82,3 +82,7 @@ or:
 ```shell
 make run
 ```
+To clean the project:
+```shell
+make clean
+```
