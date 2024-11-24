@@ -32,15 +32,12 @@ void Calculate (N_NETWORK * N)
                     for (int wei = 0; wei < N->layers[lay].neurons[neu].numOfWeights; wei++)
                         tmp += (lay == 0 ? N->inputs[wei] : N->layers[lay-1].neurons[wei].value) * N->layers[lay].neurons[neu].weights[wei];
 
-                    N->layers[lay].neurons[neu].value = ActivationFunction (tmp, FUNC_SIGMOID);
+                    N->layers[lay].neurons[neu].value = ActivationFunction (tmp + N->layers[lay].bias, FUNC_SIGMOID);
                 }
             }
 
             for (int wei = 0; wei < N->output.neurons[out].numOfWeights; wei++)
                 N->output.neurons[out].value += N->layers[N->numOfLayers-1].neurons[wei].value * N->output.neurons[out].weights[wei];
-
-            for (int lay = 0; lay < N->numOfLayers; lay++)
-                N->output.neurons[out].value += N->layers[lay].bias;
 
             N->output.neurons[out].value += N->output.bias;
         }

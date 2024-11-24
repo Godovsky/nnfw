@@ -36,6 +36,7 @@ int main (int argc, char * argv[])
         1,1, 0,1,1
     };
 
+    /* columns = <num of inputs> + <num of outputs> */
     COL columns = config[0]+config[GET_ARRAY_SIZE(config)-1];
     ROW rows = GET_ARRAY_SIZE(d)/columns;
     DATA_TRAIN Data = {rows, columns, d};
