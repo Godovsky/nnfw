@@ -36,3 +36,4 @@ DIFFERENCE Difference (N_NETWORK * N, DATA_TRAIN * Data, int outIndex);
 void Train (N_NETWORK * N, DATA_TRAIN * Data, OFFSET offset, STEP step);
 
 #endif
+

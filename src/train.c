@@ -110,3 +110,4 @@ void Train (N_NETWORK * N, DATA_TRAIN * Data, OFFSET offset, STEP step)
         }
     }
 }
+
